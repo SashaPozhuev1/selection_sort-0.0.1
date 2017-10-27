@@ -4,20 +4,23 @@
 
 using namespace std;
 
-void create(double * & mass, unsigned int &size, unsigned int &schet ) {
-	string stroka;
-	getline(cin, stroka);
-	istringstream stream(stroka);
+void create(double * & mass, unsigned int &size, unsigned int &schet) {
+	string stroka1, stroka2;
+	getline(cin, stroka1);
+	istringstream stream1(stroka1);
 
-	stream >> size;
+	stream1 >> size;
 
-	mass = new double [size];
+	getline(cin, stroka2);
+	istringstream stream2(stroka2);
+
+	mass = new double[size];
 	for (int i = 0; i < size; i++) {
-		if (stream >> mass[i]) {
+		if (stream2 >> mass[i]) {
 			schet++;
 		}
 	}
-	
+
 }
 
 void obmen(double * & mass, unsigned int size) {
@@ -25,11 +28,11 @@ void obmen(double * & mass, unsigned int size) {
 
 		int j = i;
 		for (int k = i + 1; k < size; k++) {
-			if (mass[k] < mass[i]) {
+			if (mass[k] < mass[j]) {
 				j = k;
 			}
 		}
-		
+
 		if (mass[i] > mass[j]) {
 			swap(mass[i], mass[j]);
 		}
