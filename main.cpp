@@ -21,7 +21,7 @@ void create(double * & mass, unsigned int &size, unsigned int &schet ) {
 }
 
 void obmen(double * & mass, unsigned int size) {
-	for (int i = 0; i < size - 1; i++) {
+	for (int i = 0; i < size; i++) {
 
 		int j = i;
 		for (int k = i + 1; k < size; k++) {
